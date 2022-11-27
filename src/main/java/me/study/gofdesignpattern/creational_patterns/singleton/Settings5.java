@@ -1,9 +1,11 @@
 package me.study.gofdesignpattern.creational_patterns.singleton;
 
+import java.io.Serializable;
+
 /**
  * static inner 클래스 홀더
  */
-public class Settings5 {
+public class Settings5 implements Serializable {
 
     private Settings5() {
     }
