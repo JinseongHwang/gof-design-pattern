@@ -52,7 +52,7 @@ static 타입의 변수가 생성되는 시점에 인스턴스를 만들어서 �
 
 :octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings5.java)
 
-<br/>
+---
 
 싱글턴 인스턴스를 만드는 5가지 방법에 대해 알아봤다.    
 그럼에도 불구하고 싱글턴을 깨트리는 방법이 존재한다. 깨트리는 방법에 대해 알아보자.    
