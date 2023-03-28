@@ -1,10 +1,9 @@
-GoF 디자인 패턴을 학습하고 Java로 실습합니다.
 
 # A. 생성 패턴 (Creational Patterns)
 
 ## A-1. 싱글톤 패턴 (Singleton)
 
-인스턴스를 오직 한개만 만들어 제공하고, 1개임을 보장하는 클래스를 사용하는 패턴이다.
+> 인스턴스를 오직 한개만 만들어 제공하고, 1개임을 보장하는 클래스를 사용하는 패턴이다.
 
 ### 구현 방법1: private 기본 생성자 만들기
 
@@ -21,12 +20,16 @@ GoF 디자인 패턴을 학습하고 Java로 실습합니다.
 
 :octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings1.java)
 
+<br/>
+
 ### 구현 방법2: `getInstance()` 메서드에 `synchronized` 키워드로 락 걸어주기
 
 따라서 가장 쉬운 방법은 `synchronized` 키워드로 락을 걸어주는 방식이다.  
 하지만 이 방식은 락을 거는 방식이기 때문에 성능 상 유리하지 않다.  
 
 :octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings2.java)
+
+<br/>
 
 ### 구현 방법3: 이른 초기화(eager initialization) 사용하기
 
@@ -37,6 +40,8 @@ static 타입의 변수가 생성되는 시점에 인스턴스를 만들어서 �
 
 :octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings3.java)
 
+<br/>
+
 ### 구현 방법4: Double checked locking 기법 사용하기
 
 미리 만드는 것도 싫고, `synchronized` 를 사용해서 성능 저하도 피하고 싶다면 이 방법도 있다.  
@@ -44,6 +49,8 @@ static 타입의 변수가 생성되는 시점에 인스턴스를 만들어서 �
 추가적으로 인스턴스 변수 선언 시 `volatile` 키워드를 추가해서 메모리의 데이터를 직접적으로 read/write 하도록 해야만 안전하게 사용 가능하다. (jdk 1.5~)  
 
 :octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings4.java)
+
+<br/>
 
 ### 구현 방법5: static inner 클래스 사용하기
 
@@ -54,14 +61,16 @@ static 타입의 변수가 생성되는 시점에 인스턴스를 만들어서 �
 
 <br/>
 
-싱글턴 인스턴스를 만드는 5가지 방법에 대해 알아봤다.    
-그럼에도 불구하고 싱글턴을 깨트리는 방법이 존재한다. 깨트리는 방법에 대해 알아보자.    
+> 싱글턴 인스턴스를 만드는 5가지 방법에 대해 알아봤다.    
+> 그럼에도 불구하고 싱글턴을 깨트리는 방법이 존재한다. 깨트리는 방법에 대해 알아보자.    
 
 ### 깨트리는 방법1: Reflection 사용하기
 
 Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버리는 방법이다.  
 
 :octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/BreakSingletonWithReflection.java)
+
+<br/>
 
 ### 깨트리는 방법2: 직렬화 & 역직렬화 사용하기
 
@@ -74,6 +83,8 @@ Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버�
 
 <br/>
 
+> 각 방식에 장단점이 있어 보인다. 권장하는 방법은 뭘까?
+
 ### 권장 방법: enum 사용하기
 
 싱글턴을 깨는 2가지 방법에 대해 알아봤는데, 역직렬화를 사용하는 방법은 `readResolve()` 메서드를 명시적으로 구현해서 예방할 수 있었다.    
@@ -84,6 +95,8 @@ Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버�
 :octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings6.java)
 
 <br/>
+
+> 실제 활용 예시를 알아보자.
 
 ### 자바와 스프링에서 활용 예시
 
