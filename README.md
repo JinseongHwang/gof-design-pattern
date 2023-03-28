@@ -5,6 +5,7 @@
 * [A-3. 추상 팩토리 패턴 (Abstract factory)](#a-3------------abstract-factory-)
 * [A-4. 빌더 패턴 (Builder)](#a-4--------builder-)
 * [A-5. 프로토타입 패턴 (Prototype)](#a-5-----------prototype-)
+
 [B. 구조 패턴 (Structual Patterns)](#b--------structual-patterns-)
 * [B-1. 어댑터 패턴 (Adapter)](#b-1---------adapter-)
 * [B-2. 브릿지 패턴 (Bridge)](#b-2---------bridge-)
@@ -13,6 +14,7 @@
 * [B-5. 퍼사드 패턴 (Facade)](#b-5---------facade-)
 * [B-6. 플라이웨이트 패턴 (Flyweight)](#b-6------------flyweight-)
 * [B-7. 프록시 패턴 (Proxy)](#b-7---------proxy-)
+
 [C. 행동 패턴 (Behavioral Patterns)](#c--------behavioral-patterns-)
 * [C-1. 책임 연쇄 패턴 (Chain of responsibility)](#c-1-----------chain-of-responsibility-)
 * [C-2. 커맨드 패턴 (Command)](#c-2---------command-)
