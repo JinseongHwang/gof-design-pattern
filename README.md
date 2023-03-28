@@ -19,14 +19,14 @@ GoF 디자인 패턴을 학습하고 Java로 실습합니다.
 하지만 이 방식은 멀티쓰레드 환경에서 안전하지 않다. 
 쓰레드 별로 `getInstance()` 메서드 내에서 생성 로직을 각각 호출할 수도 있기 때문이다.
 
->>> [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings1.java)
+:octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings1.java)
 
 ### 방법2: `getInstance()` 메서드에 `synchronized` 키워드로 락 걸어주기
 
 따라서 가장 쉬운 방법은 `synchronized` 키워드로 락을 걸어주는 방식이다.
 하지만 이 방식은 락을 거는 방식이기 때문에 성능 상 유리하지 않다.
 
->>> [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings2.java)
+:octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings2.java)
 
 ### 방법3: 이른 초기화(eager initialization) 사용하기
 
@@ -35,7 +35,7 @@ static 타입의 변수가 생성되는 시점에 인스턴스를 만들어서 �
 만약 인스턴스의 생성 비용이 비싸다면 나중에 사용 시점에 만드는 것이 더 나은 선택일 수도 있다.
 자주 사용하는 인스턴스인 경우에만 이 방식으로 만드는 것이 좋다.
 
->>> [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings3.java)
+:octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings3.java)
 
 ### 방법4: Double checked locking 기법 사용하기
 
@@ -43,14 +43,14 @@ static 타입의 변수가 생성되는 시점에 인스턴스를 만들어서 �
 인스턴스가 존재하는지 존재하지 않는지 판단 후 인스턴스 생성 시점에만 `synchronized` block을 사용해서 동기화 하는 방법이다.
 추가적으로 인스턴스 변수 선언 시 `volatile` 키워드를 추가해서 메모리의 데이터를 직접적으로 read/write 하도록 해야만 안전하게 사용 가능하다. (jdk 1.5~)
 
->>> [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings4.java)
+:octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings4.java)
 
 ### 방법5: static inner 클래스 사용하기
 
 방법3에서 소개했던 이른 초기화 방식과 유사하다. 이른 초기화를 클래스의 멤버 변수로 진행하는 것이 아니라 static inner 클래스에서 진행하도록 한다.
 그러면 `getInstance()` 메서드가 호출되는 시점에 초기화가 진행되면서 안전하게 처리할 수 있다.
 
->>> [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings5.java)
+:octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings5.java)
 
 <br/>
 
@@ -61,7 +61,7 @@ static 타입의 변수가 생성되는 시점에 인스턴스를 만들어서 �
 
 Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버리는 방법이다.
 
->>> [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/BreakSingletonWithReflection.java)
+:octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/BreakSingletonWithReflection.java)
 
 ### 방법2: 직렬화 & 역직렬화 사용하기
 
@@ -69,8 +69,8 @@ Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버�
 역직렬화 과정에서 반드시 `readResolve()` 메서드를 찾아서 실행하게 되는데, 원래는 `new XXX()`가 실행된다.
 하지만 여기서 `getInstance()` 를 호출하도록 하면 역직렬화 과정에서 싱글턴이 깨지는 문제를 해결할 수 있다.
 
->>> [**Example code 1**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings5.java)
->>> [**Example code 2**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/BreakSingletonWithSerializable.java)
+:octocat: [**Example code 1**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/Settings5.java)
+:octocat: [**Example code 2**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/singleton/BreakSingletonWithSerializable.java)
 
 
 ## A-2. 팩토리 메서드 패턴 (Factory method)
