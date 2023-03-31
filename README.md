@@ -135,8 +135,14 @@ Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버�
 - ApplicationContext 레벨에서 관리되는 빈 객체 (Singleton-Scope)
 - 다른 디자인 패턴(빌더, 퍼사드, 추상 팩토리 등) 구현체의 일부로 쓰이기도 함
 
+> 더 읽어보자
+
+- https://velog.io/@backfox/싱글톤-패턴을-경계하는-사람들의-이야기
 
 ## A-2. 팩토리 메서드 패턴 (Factory method)
+
+
+
 
 ## A-3. 추상 팩토리 패턴 (Abstract factory)
 
