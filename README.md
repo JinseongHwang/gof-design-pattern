@@ -137,6 +137,8 @@ Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버�
 - ApplicationContext 레벨에서 관리되는 빈 객체 (Singleton-Scope)
 - 다른 디자인 패턴(빌더, 퍼사드, 추상 팩토리 등) 구현체의 일부로 쓰이기도 함
 
+<br/>
+
 ### 더 읽어보기
 
 - https://velog.io/@backfox/싱글톤-패턴을-경계하는-사람들의-이야기
@@ -160,6 +162,8 @@ Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버�
   
 어떤 인스턴스를 만들기 위해 필요한 로직에 변경 없이 새로운 인스턴스를 다른 방법으로 얼마든지 확장할 수 있게 된다.  
 생성할 인스턴스(Product)와 그 인스턴스를 생성하는 팩토리(Creator)의 커플링을 느슨하게 만들었기 때문에 가능하다.
+
+:octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/tree/main/src/main/java/me/study/gofdesignpattern/creational_patterns/factory_method/_02_after)
 
 <br/>
 
