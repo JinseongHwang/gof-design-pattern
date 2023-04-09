@@ -29,6 +29,7 @@
 * [C-10. 템플릿 메서드 패턴 (Template method)](#c-10-템플릿-메서드-패턴-template-method)
 * [C-11. 비지터 패턴 (Visitor)](#c-11-비지터-패턴-visitor)
 
+<br/>
 
 # A. 생성 패턴 (Creational Patterns)
 
@@ -143,6 +144,8 @@ Java의 바이트 코드를 조작해서 인스턴스의 제어권을 뺏어버�
 
 - https://velog.io/@backfox/싱글톤-패턴을-경계하는-사람들의-이야기
 
+<br/>
+
 ## A-2. 팩토리 메서드 패턴 (Factory method)
 
 ### 정의
@@ -189,6 +192,8 @@ Java 8버전 등을 사용한다면 Abstract class를 인터페이스와 구현 
   - java.lang.Calender / java.lang.NumberFormat
 - 스프링의 BeanFactory
   - Object 타입의 Product 를 만드는 BeanFactory 라는 Creator
+
+<br/>
 
 ## A-3. 추상 팩토리 패턴 (Abstract factory)
 
@@ -237,6 +242,8 @@ Java 8버전 등을 사용한다면 Abstract class를 인터페이스와 구현 
 :octocat: [**Example code 1**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/abstract_factory/_03_java/DocumentBuilderFactoryExample.java)
 :octocat: [**Example code 2**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/abstract_factory/_03_java/FactoryBeanExample.java)
 
+<br/>
+
 ## A-4. 빌더 패턴 (Builder)
 
 ### 정의
@@ -275,6 +282,8 @@ Java 8버전 등을 사용한다면 Abstract class를 인터페이스와 구현 
 
 :octocat: [**Example code 1**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/builder/_03_java/StreamExample.java)
 :octocat: [**Example code 2**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/builder/_03_java/LombokExample.java)
+
+<br/>
 
 ## A-5. 프로토타입 패턴 (Prototype)
 
@@ -331,6 +340,9 @@ reference 값들만 복제가 된다. 따라서 프로토타입에서 가리키�
 
 :octocat: [**Example code 1**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/prototype/_03_java/JavaCollectionExample.java)
 :octocat: [**Example code 2**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/prototype/_03_java/ModelMapperExample.java)
+
+<br/>
+<br/>
 
 # B. 구조 패턴 (Structual Patterns)
 
