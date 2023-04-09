@@ -1,3 +1,8 @@
+> 백기선님의 [코딩으로 학습하는 GoF의 디자인 패턴](https://www.inflearn.com/course/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/dashboard) 강의를 보고 실습한 내용입니다.  
+> 강의에서 제공된 코드를 따라해보고, 제 방식으로 리팩토링을 진행했습니다.   
+> README 에는 강의에서 설명한 내용, 여러 문서들, 제 생각이 섞여 있습니다.   
+> ~저도 사람이기 때문에~ 정확하지 않은 정보가 있을 수 있습니다.  
+
 # Table of contents
 
 [A. 생성 패턴 (Creational Patterns)](#a-생성-패턴-creational-patterns)
