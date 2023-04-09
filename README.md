@@ -278,6 +278,50 @@ Java 8버전 등을 사용한다면 Abstract class를 인터페이스와 구현 
 
 ## A-5. 프로토타입 패턴 (Prototype)
 
+### 정의
+
+기존 인스턴스를 복제해서 새로운 인스턴스를 만드는 패턴이다.    
+복제 기능을 갖추고 있는 기존 인스턴스를 프로토타입으로 사용해 새 인스턴스를 만들 수 있다.  
+  
+예를 들어, 인스턴스 하나를 만드는 데 DB Connection이 필요하거나 네트워크 통신을 통해 
+가져온 값을 기반으로 만들어지는 객체라면 인스턴스 하나를 만드는 비용이 비쌀 것이다. 
+이러한 경우에 미리 DB 혹은 네트워크 통신을 거친 후 프로토타입을 하나 만들어두고, 
+프로토타입으로부터 모든 데이터를 복제해서 필요한 값만 수정하는 방식으로 인스턴스를 생성하면 
+불필요한 리소스 낭비를 줄일 수 있다.
+
+### Java의 Object.clone()
+
+복제하는 기능은 Java의 Object 클래스에 포함된 clone() 메서드를 활용한 매커니즘을 따라간다. 
+하지만 clone() 기능은 protected 이기 때문에 일반적으로 호출할 수 없다. 따라서 복제 기능이 필요한 
+클래스에는 Cloneable 인터페이스를 구현해야 한다.
+
+### Shallow copy와 Deep copy
+
+Object 의 clone() 을 사용하면 기본적으로 Shallow copy로 동작한다. 기본적으로 복제 기능이 동작할 때 
+field-for-field 방식으로 복제된다. 그 과정에서 primitive type 을 제외하고 reference type 들은 
+reference 값들만 복제가 된다. 따라서 프로토타입에서 가리키는 인스턴스와 복제본에서 가리키는 
+인스턴스는 동일하다.
+
+### 장점
+
+- 복잡한 객체를 만드는 과정을 숨길 수 있다.
+- 기존 객체를 복제하는 과정이 새 인스턴스를 만드는 것보다 비용(시간 또는 메모리)적인 면에서 효율적일 수도 있다.
+- 추상적인 타입을 리턴할 수 있다.
+
+### 단점
+
+- 복잡한 객체를 만드는 과정 자체가 복잡할 수 있다.
+  - 동일한 객체를 만들어 줘야 하는데, 객체 간 순환 참조가 있는 경우에는 과정이 복잡할 수 있다.
+
+### 자바와 스프링에서 활용 예시
+
+- 명시적으로 프로토타입 패턴을 사용할 일은 잘 없다.
+- ArrayList 의 내용을 복제할 때 ArrayList의 생성자를 사용해서 Copy 가능하다.
+- ModelMapper, MapStruct 등의 라이브러리를 사용해서 값 매핑이 가능하다.
+
+:octocat: [**Example code 1**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/prototype/_03_java/JavaCollectionExample.java)
+:octocat: [**Example code 2**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/prototype/_03_java/ModelMapperExample.java)
+
 # B. 구조 패턴 (Structual Patterns)
 
 ## B-1. 어댑터 패턴 (Adapter)
