@@ -190,8 +190,52 @@ Java 8버전 등을 사용한다면 Abstract class를 인터페이스와 구현 
 - 스프링의 BeanFactory
   - Object 타입의 Product 를 만드는 BeanFactory 라는 Creator
 
-
 ## A-3. 추상 팩토리 패턴 (Abstract factory)
+
+### 정의
+
+서로 관련있는 여러 객체를 만들어주는 인터페이스를 활용하는 패턴이다.
+
+<br/>
+
+### 장점
+
+클라이언트 측에서 구체적으로 어떤 클래스의 인스턴스(concrete product)를 사용하는지 감출 수 있다.
+따라서, 구체 클래스가 변경되더라도 코드 변경이 발생하지 않는다.
+
+:octocat: [**Example code**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/abstract_factory/_02_after/ShipInventory.java)
+
+<br/>
+
+### 팩토리 메서드 패턴과의 차이점
+
+구체적인 인스턴스를 구체적인 팩토리로 만드는 것 까지는 동일하지만,
+인스턴스를 생성하는 주체가 클라이언트 측에 있는 것이 추상 팩토리 패턴의 특징이다.
+  
+조금 더 자세히 말해서,  
+구현 형태와 효과는 비슷하다. 둘 다 객체 생성 과정을 추상화한 인터페이스를 제공한다.  
+  
+하지만 서로 관점이 조금 다르다.  
+- 팩토리 메서드 패턴은 "팩토리를 구현하는 방법(inheritance)"에 초점을 둔다.
+- 추상 팩토리 패턴은 "팩토리를 사용하는 방법(composition)"에 초점을 둔다.
+  
+목적도 조금 다르다.  
+- 팩토리 메서드 패턴은 구체적은 객체 생성 과정을 하위 또는 구체적인 클래스로 옮기는 것이 목적이다.
+- 추상 팩토리 패턴은 관련있는 여러 객체를 구체적인 클래스에 의존하지 않고 만들 수 있게 해주는 것이 목적이다.
+
+<br/>
+
+### 자바와 스프링에서 활용 예시
+
+- Java 라이브러리
+  - javax.xml.xpath.XPathFactory#newInstance()
+  - javax.xml.transform.TransformerFactory#newInstance()
+  - javax.xml.parsers.DocumentBuilderFactory#newInstance()
+- Spring
+  - FactoryBean 과 그 구현체들
+
+:octocat: [**Example code 1**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/abstract_factory/_03_java/DocumentBuilderFactoryExample.java)
+:octocat: [**Example code 2**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/abstract_factory/_03_java/FactoryBeanExample.java)
 
 ## A-4. 빌더 패턴 (Builder)
 
