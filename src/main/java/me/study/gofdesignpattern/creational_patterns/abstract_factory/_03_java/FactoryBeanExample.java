@@ -16,7 +16,7 @@ public class FactoryBeanExample {
         System.out.println(whiteship.getName());
 
         final ApplicationContext applicationContext2 = new AnnotationConfigApplicationContext(FactoryBeanConfig.class);
-        Ship bean = applicationContext2.getBean(Ship.class);
+        final Ship bean = applicationContext2.getBean(Ship.class);
         System.out.println(bean);
     }
 }
