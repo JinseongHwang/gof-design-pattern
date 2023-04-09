@@ -239,6 +239,43 @@ Java 8버전 등을 사용한다면 Abstract class를 인터페이스와 구현 
 
 ## A-4. 빌더 패턴 (Builder)
 
+### 정의
+
+동일한 프로세스를 거쳐 다양한 구성의 인스턴스를 만드는 방법이다.
+
+<br/>
+
+### 장점
+
+- 객체 생성에 대해 다양한 요구사항을 유연하게 반영할 수 있다.
+- 객체 생성 과정에서 필요에 따라 강제할 수 있어서 불완전한 객체의 생성을 예방할 수 있다.
+- 빌더를 통해서 반복적인 생성 로직이 필요한 경우라면 빌더를 의존하는 디렉터(Director)를 사용할 수 있다.
+  - 클라이언트에서 디렉터를 사용하면 반복적인 생성 로직을 깔끔하고 안전하게 사용할 수 있다.
+- 복잡한 객체를 만드는 구체적인 과정을 숨길 수 있다.
+
+<br/>
+
+### 단점
+
+- 인스턴스 생성을 위해 빌더 인터페이스를 만들어야 하고, 디렉터도 만들어야 한다. 
+  - 요구사항의 최소 조건에 비해 많은 객체가 생성되어야 한다.
+- 많은 객체가 생성되고 활용하면서, 인스턴스 생성 로직이 조금 복잡해진다. (대부분 디자인 패턴의 단점)
+
+<br/>
+
+### 자바와 스프링에서 활용 예시
+
+- Java 8 Stream.Builder API
+- StringBuilder
+- Lombok 의 @Builder
+- Spring
+  - UriComponentBuilder
+  - MockMvcWebClientBuilder
+  - XXXBuilder ...
+
+:octocat: [**Example code 1**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/builder/_03_java/StreamExample.java)
+:octocat: [**Example code 2**](https://github.com/JinseongHwang/gof-design-pattern/blob/main/src/main/java/me/study/gofdesignpattern/creational_patterns/builder/_03_java/LombokExample.java)
+
 ## A-5. 프로토타입 패턴 (Prototype)
 
 # B. 구조 패턴 (Structual Patterns)
