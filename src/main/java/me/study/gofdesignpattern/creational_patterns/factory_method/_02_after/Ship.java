@@ -3,8 +3,8 @@ package me.study.gofdesignpattern.creational_patterns.factory_method._02_after;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import me.study.gofdesignpattern.creational_patterns.abstract_factory._02_after.Anchor;
-import me.study.gofdesignpattern.creational_patterns.abstract_factory._02_after.Wheel;
+import me.study.gofdesignpattern.creational_patterns.abstract_factory._01_before.Anchor;
+import me.study.gofdesignpattern.creational_patterns.abstract_factory._01_before.Wheel;
 
 @Getter
 @Setter
