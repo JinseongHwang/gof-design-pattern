@@ -3,6 +3,8 @@
 > README 에는 강의에서 설명한 내용, 여러 문서들, 제 생각이 섞여 있습니다.   
 > ~저도 사람이기 때문에~ 정확하지 않은 정보가 있을 수 있습니다.  
 
+ + https://java-design-patterns.com/patterns/
+
 # Table of contents
 
 [A. 생성 패턴 (Creational Patterns)](#a-생성-패턴-creational-patterns)
